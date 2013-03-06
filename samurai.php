@@ -1,6 +1,7 @@
 <?php
 
                 $address='127.0.0.1';
+				
                 $port=8080;
 				
                 if(($create=socket_create(AF_INET,SOCK_STREAM,SOL_TCP))===false) 
@@ -39,9 +40,11 @@
     		 if (($input = socket_read($accept, 2048, PHP_NORMAL_READ))===false) {
                              break ;
                            }
+						   
         if (!$input === trim($input)) {
             continue;
         }
+		
         if ($input === 'QUIT') {
             break;
         }
