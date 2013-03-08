@@ -43,7 +43,9 @@
 		
 		       $request=urldecode($request);
 		      //decoding if url contains any special characters
-		
+		       
+		       if($request===""||$request=="favicon.ico") $request="index.html";
+		       
 	               echo $request;
 		
 		      //checking if page exists on server
